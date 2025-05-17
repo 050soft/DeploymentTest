@@ -20,10 +20,10 @@ jobs:
         version: "^1.0.0"
         token: ${{ secrets.GITHUB_TOKEN }}
 
-    - name: Rojo version
-    run: rojo --version
+    - name: Report tool versions
+      run: rojo --version
 
-    - name: Deploy 
+    - name: Deploy
       run: rojo upload --cookie "$ROBLOSECURITY" --asset_id 4756703682
       env:
         ROBLOSECURITY: ${{ secrets.ROBLOSECURITY }}
