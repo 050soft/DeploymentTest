@@ -24,6 +24,6 @@ jobs:
       run: rojo --version
 
     - name: Deploy
-      run: rojo upload --api_key "$API_KEY" --universe_id 7672663738 -v --asset_id 107505894422783W
+      run: rojo upload --api_key "$API_KEY" --universe_id 7672663738 -v --asset_id 107505894422783
       env:
         API_KEY: ${{ secrets.API_KEY }}
