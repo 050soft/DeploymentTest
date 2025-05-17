@@ -2,13 +2,13 @@
 	"name": "RobloxSimulator",
 	"tree": {
 		"$className": "DataModel",
+		"ReplicatedFirst": {
+			"$ignoreUnknownInstances": true
+		},
 		"ReplicatedStorage": {
 			"$ignoreUnknownInstances": true,
 			"$path": "/src/shared"
 		},
-		"ReplicatedFirst": {
-			"$ignoreUnknownInstances": true
-		  },
 		"ServerScriptService": {
 			"$ignoreUnknownInstances": true,
 			"$path": "src/server"
