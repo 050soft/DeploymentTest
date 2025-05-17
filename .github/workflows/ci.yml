@@ -26,12 +26,16 @@ jobs:
     - name: Generate version.lua
       run: |
         VERSION=$(jq -r .version package.json)
+        SHORT_COMMIT=$(git rev-parse --short=8 HEAD)
         echo "return {" > src/shared/version.lua
         echo "  version = '${VERSION}'," >> src/sharedversion.lua
-        echo "  commit = '$(git rev-parse --short=8 HEAD)'," >> src/shared/version.lua
+        echo "  commit = '${SHORT_COMMIT}'," >> src/shared/version.lua
         echo "  branch = '${GITHUB_REF##*/}'," >> src/shared/version.lua
         echo "}" >> src/shared/version.lua
 
+    - name: Debug: List shared directory
+      run: ls -l src/shared
+      
     - name: Deploy
       run: rojo upload --api_key "$API_KEY" --universe_id 7672663738 -v --asset_id 107505894422783
       env:
