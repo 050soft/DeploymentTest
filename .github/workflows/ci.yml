@@ -18,6 +18,7 @@ jobs:
     - uses: Roblox/setup-foreman@v3
       with:
         token: ${{ secrets.TOKEN }}
+        allow-external-github-orgs: true
 
     - name: Report tool versions
       run: rojo --version
