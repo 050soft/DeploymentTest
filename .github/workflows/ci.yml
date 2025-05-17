@@ -28,7 +28,7 @@ jobs:
         VERSION=$(jq -r .version package.json)
         echo "return {" > src/shared/version.lua
         echo "  version = '${VERSION}'," >> src/sharedversion.lua
-        echo "  commit = '$(git rev-parse HEAD)'," >> src/shared/version.lua
+        echo "  commit = '$(git rev-parse --short=8 HEAD)'," >> src/shared/version.lua
         echo "  branch = '${GITHUB_REF##*/}'," >> src/shared/version.lua
         echo "}" >> src/shared/version.lua
 
