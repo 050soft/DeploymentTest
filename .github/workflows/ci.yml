@@ -24,7 +24,7 @@ jobs:
       run: rojo --version
 
     - name: Deploy
-      run: rojo upload --cookie "$ROBLOSECURITY" --asset_id 107505894422783 --universe_id 7672663738 --api_key = "$API_KEY" defauklt.project.json
+      run: rojo upload --cookie "$ROBLOSECURITY" --asset_id 107505894422783 --universe_id 7672663738 --api_key = "$API_KEY" -v default.project.json
       env:
         ROBLOSECURITY: ${{ secrets.ROBLOSECURITY }}
         API_KEY: ${{ secrets.API_KEY }}
