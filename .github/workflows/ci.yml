@@ -18,7 +18,7 @@ jobs:
     - uses: Roblox/setup-foreman@v1
       with:
         version: "^1.0.0"
-        token: ${{ secrets.GITHUB_TOKEN }}
+        token: ${{ secrets.TOKEN }}
 
     - name: Report tool versions
       run: rojo --version
