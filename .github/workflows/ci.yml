@@ -33,9 +33,9 @@ jobs:
         echo "  branch = '${GITHUB_REF##*/}'," >> src/shared/version.lua
         echo "}" >> src/shared/version.lua
 
-    - name: Debug: List shared directory
+    - name: list shared directory
       run: ls -l src/shared
-      
+
     - name: Deploy
       run: rojo upload --api_key "$API_KEY" --universe_id 7672663738 -v --asset_id 107505894422783
       env:
