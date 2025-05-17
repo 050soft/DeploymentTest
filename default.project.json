@@ -7,7 +7,7 @@
 			"$path": "/src/shared"
 		},
 		"ReplicatedFirst": {
-			"$ignoreUnknownInstances": false
+			"$ignoreUnknownInstances": true
 		  },
 		"ServerScriptService": {
 			"$ignoreUnknownInstances": true,
