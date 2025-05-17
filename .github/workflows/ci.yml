@@ -23,6 +23,15 @@ jobs:
     - name: Report tool versions
       run: rojo --version
 
+    - name: Generate version.lua
+      run: |
+        VERSION=$(jq -r .version package.json)
+        echo "return {" > src/shared/version.lua
+        echo "  version = '${VERSION}'," >> src/sharedversion.lua
+        echo "  commit = '$(git rev-parse HEAD)'," >> src/shared/version.lua
+        echo "  branch = '${GITHUB_REF##*/}'," >> src/shared/version.lua
+        echo "}" >> src/shared/version.lua
+
     - name: Deploy
       run: rojo upload --api_key "$API_KEY" --universe_id 7672663738 -v --asset_id 107505894422783
       env:
