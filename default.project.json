@@ -7,7 +7,7 @@
 		},
 		"ReplicatedStorage": {
 			"$ignoreUnknownInstances": true,
-			"$path": "/src/shared"
+			"$path": "src/shared"
 		},
 		"ServerScriptService": {
 			"$ignoreUnknownInstances": true,
