@@ -36,6 +36,11 @@ jobs:
     - name: View version.lua
       run: cat src/shared/version.luau
 
+    - name: View src content
+      run: |
+        ls src/ -l
+        ls ./src -l
+
     - name: Deploy
       run: rojo upload --api_key "$API_KEY" --universe_id 7672663738 -v --asset_id 107505894422783
       env:
