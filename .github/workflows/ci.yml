@@ -27,11 +27,11 @@ jobs:
       run: |
         VERSION=$(jq -r .version package.json)
         SHORT_COMMIT=$(git rev-parse --short=8 HEAD)
-        echo "return {" > src/shared/version.lua
-        echo "  version = '${VERSION}'," >> src/sharedversion.lua
-        echo "  commit = '${SHORT_COMMIT}'," >> src/shared/version.lua
-        echo "  branch = '${GITHUB_REF##*/}'," >> src/shared/version.lua
-        echo "}" >> src/shared/version.lua
+        echo "return {" > src/shared/version.luau
+        echo "  version = '${VERSION}'," >> src/sharedversion.luau
+        echo "  commit = '${SHORT_COMMIT}'," >> src/shared/version.luau
+        echo "  branch = '${GITHUB_REF##*/}'," >> src/shared/version.luau
+        echo "}" >> src/shared/version.luau
 
     - name: View version.lua
       run: cat src/shared/version.lua
