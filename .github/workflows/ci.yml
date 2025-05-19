@@ -28,13 +28,13 @@ jobs:
         VERSION=$(jq -r .version package.json)
         SHORT_COMMIT=$(git rev-parse --short=8 HEAD)
         echo "return {" > src/shared/version.luau
-        echo "  version = '${VERSION}'," >> src/sharedversion.luau
+        echo "  version = '${VERSION}'," >> src/shared/version.luau
         echo "  commit = '${SHORT_COMMIT}'," >> src/shared/version.luau
         echo "  branch = '${GITHUB_REF##*/}'," >> src/shared/version.luau
         echo "}" >> src/shared/version.luau
 
     - name: View version.lua
-      run: cat src/shared/version.lua
+      run: cat src/shared/version.luau
 
     - name: Deploy
       run: rojo upload --api_key "$API_KEY" --universe_id 7672663738 -v --asset_id 107505894422783
