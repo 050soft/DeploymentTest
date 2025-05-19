@@ -1,4 +1,4 @@
-name: CI
+name: Deploy Dev
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - master
 
 jobs:
-  ci:
+  deployment:
     name: Deployment
     runs-on: ubuntu-latest
 
@@ -36,12 +36,12 @@ jobs:
     - name: View version.lua
       run: cat src/shared/version.luau
 
-    - name: View src content
-      run: |
-        ls src/ -l
-        ls ./src -l
+    # - name: View src content
+    #   run: |
+    #     ls src/ -l
+    #     ls ./src -l
 
     - name: Deploy
-      run: rojo upload --api_key "$API_KEY" --universe_id 7672663738 -v --asset_id 107505894422783
+      run: rojo upload --api_key "$API_KEY" --universe_id 7672663738 -v --asset_id 107505894422783 # SET PLACE AND UNIVERSE FOR DEVELOPMENT!
       env:
         API_KEY: ${{ secrets.API_KEY }}
