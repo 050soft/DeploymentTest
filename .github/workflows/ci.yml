@@ -25,7 +25,7 @@ jobs:
 
     - name: Generate version.lua
       run: |
-        VERSION=$(jq -r .version package.json)
+        VERSION=$(git describe --tags --abbrev=0)
         SHORT_COMMIT=$(git rev-parse --short=8 HEAD)
         echo "return {" > src/shared/version.luau
         echo "  version = '${VERSION}'," >> src/shared/version.luau
